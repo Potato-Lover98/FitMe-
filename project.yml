@@ -1,0 +1,42 @@
+name: FitMePlus
+options:
+  bundleIdPrefix: com.fitme
+  deploymentTarget:
+    watchOS: "10.0"
+  createIntermediateGroups: true
+
+packages:
+  FitMeCore:
+    path: FitMeCore
+
+targets:
+  FitMeWatch:
+    type: application
+    platform: watchOS
+    deploymentTarget: "10.0"
+    sources:
+      - path: FitMeWatch/Sources
+      - path: FitMeWatch/Resources
+    dependencies:
+      - package: FitMeCore
+    info:
+      path: FitMeWatch/Info.plist
+      properties:
+        CFBundleDisplayName: FitMe+
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        WKApplication: true
+        WKWatchOnly: true
+        UIBackgroundModes:
+          - bluetooth-central
+        NSHealthShareUsageDescription: "FitMe+ reads your health data to display vitals and generate insights."
+        NSHealthUpdateUsageDescription: "FitMe+ writes manual readings to HealthKit to keep your history unified."
+        NSBluetoothAlwaysUsageDescription: "FitMe+ connects to Bluetooth thermometers and blood pressure cuffs."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.fitme.watch
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        ENABLE_BITCODE: NO
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: NO

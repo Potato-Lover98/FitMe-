@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitMe+ — watchOS Mockup</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #1a1a1a;
+    display: flex; flex-direction: column; align-items: center;
+    min-height: 100vh; color: #fff;
+    font-family: -apple-system, Helvetica, sans-serif;
+  }
+  h1 {
+    font-size: 1.5rem; font-weight: 600;
+    margin: 2rem 0 0.5rem; color: #ff453a;
+  }
+  p.sub {
+    font-size: 0.8rem; color: #888; margin-bottom: 2rem;
+  }
+  .watch-container {
+    display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center;
+    max-width: 1600px; padding: 1rem;
+  }
+  .watch { display: flex; flex-direction: column; align-items: center; }
+  .watch-label {
+    font-size: 0.75rem; color: #888; margin-top: 1rem; text-transform: uppercase; letter-spacing: 1px;
+  }
+
+  /* Apple Watch frame */
+  .bezel {
+    width: 300px; height: 390px;
+    background: #000; border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 0 0 4px #2a2a2a, 0 20px 60px rgba(0,0,0,0.6);
+    position: relative;
+  }
+  .bezel::before {
+    content: ''; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px; height: 360px;
+    border-radius: 50%; border: 1px solid #1a1a1a; pointer-events: none;
+  }
+  .crown {
+    position: absolute; right: -8px; top: 45%;
+    width: 10px; height: 40px; background: #333; border-radius: 3px;
+  }
+  .side-btn {
+    position: absolute; right: -6px; top: 60%;
+    width: 8px; height: 24px; background: #222; border-radius: 3px;
+  }
+  .screen {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: #000; overflow: hidden; position: relative;
+    display: flex; flex-direction: column;
+  }
+  .statusbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 28px 4px; font-size: 11px; color: #fff; font-weight: 600;
+  }
+  .statusbar .time { font-size: 13px; }
+  .content { flex: 1; padding: 4px 22px; overflow: hidden; }
+
+  /* Welcome Carousel */
+  .carousel-page {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100%; text-align: center;
+  }
+  .carousel-page .cicon { font-size: 56px; margin-bottom: 14px; }
+  .carousel-page .ctitle { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+  .carousel-page .csub { font-size: 0.75rem; color: #888; margin-bottom: 10px; }
+  .carousel-page .cdesc { font-size: 0.65rem; color: #555; line-height: 1.4; padding: 0 10px; }
+  .carousel-dots {
+    display: flex; gap: 6px; justify-content: center; margin-top: 16px;
+  }
+  .carousel-dots .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: #333;
+  }
+  .carousel-dots .dot.active { background: #ff453a; width: 18px; border-radius: 3px; }
+  .start-btn {
+    margin-top: 16px; padding: 8px 28px; background: #ff453a;
+    border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #fff;
+  }
+
+  /* Dashboard */
+  .dashboard .nav-title {
+    font-size: 0.7rem; color: #888; text-align: center; margin-bottom: 10px;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .vital-card {
+    display: flex; align-items: center; padding: 10px 12px;
+    background: #1c1c1e; border-radius: 14px; margin-bottom: 8px;
+    cursor: pointer; transition: background 0.15s;
+  }
+  .vital-card:hover { background: #2c2c2e; }
+  .vital-card .vicon { font-size: 22px; width: 32px; text-align: center; margin-right: 10px; }
+  .vital-card .vinfo { flex: 1; }
+  .vital-card .vlabel { font-size: 0.6rem; color: #888; }
+  .vital-card .vvalue { font-size: 1.05rem; font-weight: 700; color: #fff; }
+  .vital-card .vunit { font-size: 0.55rem; color: #555; }
+  .vital-card .vstatus { font-size: 0.55rem; font-weight: 700; }
+  .vital-card .chevron { font-size: 0.55rem; color: #555; margin-left: 4px; }
+  .status-normal { color: #30d158; }
+  .status-low { color: #0a84ff; }
+  .status-elevated { color: #ff9500; }
+  .status-high { color: #ff453a; }
+
+  /* Detail View */
+  .detail .d-header {
+    display: flex; align-items: center; padding: 8px 4px; margin-bottom: 10px;
+  }
+  .detail .d-header .dh-icon { font-size: 32px; margin-right: 12px; }
+  .detail .d-header .dh-value { font-size: 1.8rem; font-weight: 700; }
+  .detail .d-header .dh-unit { font-size: 0.65rem; color: #888; }
+
+  .card-box {
+    background: #1c1c1e; border-radius: 12px; padding: 10px 12px; margin-bottom: 8px;
+  }
+  .card-box .cb-title {
+    font-size: 0.6rem; font-weight: 700; color: #888; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .card-box .cb-body { font-size: 0.65rem; line-height: 1.35; }
+
+  .risk-gauge { text-align: center; }
+  .risk-gauge .rg-level { font-size: 1.1rem; font-weight: 700; }
+  .risk-gauge .rg-score { font-size: 0.7rem; margin-top: 2px; }
+  .risk-gauge .rg-bar {
+    height: 6px; background: #333; border-radius: 3px; margin-top: 8px; overflow: hidden;
+  }
+  .risk-gauge .rg-fill {
+    height: 100%; border-radius: 3px;
+  }
+
+  .condition-row {
+    display: flex; gap: 6px; margin-bottom: 6px;
+  }
+  .condition-row .cdot {
+    width: 4px; height: 4px; border-radius: 50%; background: #ff9500; margin-top: 5px; flex-shrink: 0;
+  }
+  .condition-row .ctext { font-size: 0.6rem; line-height: 1.3; }
+
+  .recommend-box {
+    background: rgba(255,204,0,0.12); border-radius: 12px; padding: 10px 12px; margin-bottom: 8px;
+  }
+  .recommend-box .rb-title { font-size: 0.6rem; font-weight: 700; color: #ffcc00; margin-bottom: 4px; }
+  .recommend-box .rb-body { font-size: 0.65rem; line-height: 1.35; }
+
+  .mini-chart { display: flex; align-items: flex-end; justify-content: space-between; height: 60px; }
+  .mini-chart .mbar { width: 7%; border-radius: 3px 3px 0 0; }
+</style>
+</head>
+<body>
+
+<h1>FitMe+</h1>
+<p class="sub">watchOS App Mockup — Welcome Carousel + Vital Detail</p>
+
+<div class="watch-container">
+
+  <!-- Welcome Carousel — Page 1 -->
+  <div class="watch">
+    <div class="bezel"><div class="crown"></div><div class="side-btn"></div>
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🔋</span></div>
+        <div class="content">
+          <div class="carousel-page">
+            <div class="cicon" style="color:#ff453a">❤️</div>
+            <div class="ctitle">Welcome to FitMe+</div>
+            <div class="csub">Your health, on your wrist.</div>
+            <div class="cdesc">Track blood pressure, temperature, heart rate, SpO₂ and more — all in one place.</div>
+          </div>
+          <div class="carousel-dots">
+            <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="watch-label">Welcome — Page 1</div>
+  </div>
+
+  <!-- Welcome Carousel — Page 2 -->
+  <div class="watch">
+    <div class="bezel"><div class="crown"></div><div class="side-btn"></div>
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🔋</span></div>
+        <div class="content">
+          <div class="carousel-page">
+            <div class="cicon" style="color:#0a84ff">🩺</div>
+            <div class="ctitle">Smart Vitals</div>
+            <div class="csub">Understand every reading.</div>
+            <div class="cdesc">Tap any vital to see what it means, your risk level, and related conditions — explained simply.</div>
+          </div>
+          <div class="carousel-dots">
+            <div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="watch-label">Welcome — Page 2</div>
+  </div>
+
+  <!-- Welcome Carousel — Page 3 -->
+  <div class="watch">
+    <div class="bezel"><div class="crown"></div><div class="side-btn"></div>
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🔋</span></div>
+        <div class="content">
+          <div class="carousel-page">
+            <div class="cicon" style="color:#bf5af2">🧠</div>
+            <div class="ctitle">On-Device AI</div>
+            <div class="csub">Fever &amp; risk engine.</div>
+            <div class="cdesc">A custom ML model runs entirely on your Watch — no cloud, fully private, instant insights.</div>
+          </div>
+          <div class="carousel-dots">
+            <div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="watch-label">Welcome — Page 3</div>
+  </div>
+
+  <!-- Welcome Carousel — Page 4 (Get Started) -->
+  <div class="watch">
+    <div class="bezel"><div class="crown"></div><div class="side-btn"></div>
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🔋</span></div>
+        <div class="content">
+          <div class="carousel-page">
+            <div class="cicon" style="color:#ff9500">🔔</div>
+            <div class="ctitle">Stay Notified</div>
+            <div class="csub">Alerts that matter.</div>
+            <div class="cdesc">Get warned about high BP, fever onset, low SpO₂, and irregular rhythms before they escalate.</div>
+            <div class="start-btn">Get Started</div>
+          </div>
+          <div class="carousel-dots">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="watch-label">Welcome — Page 4</div>
+  </div>
+
+  <!-- Dashboard (tappable cards) -->
+  <div class="watch">
+    <div class="bezel"><div class="crown"></div><div class="side-btn"></div>
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🔋</span></div>
+        <div class="content dashboard">
+          <div class="nav-title">Today</div>
+          <div class="vital-card">
+            <div class="vicon" style="color:#ff453a">❤️</div>
+            <div class="vinfo">
+              <div class="vlabel">Heart Rate</div>
+              <div class="vvalue">72 <span class="vunit">bpm</span></div>
+            </div>
+            <div class="vstatus status-normal">Normal</div>
+            <div class="chevron">›</div>
+          </div>
+          <div class="vital-card">
+            <div class="vicon" style="color:#ff9500">🌡️</div>
+            <div class="vinfo">
+              <div class="vlabel">Body Temp</div>
+              <div class="vvalue">36.7 <span class="vunit">°C</span></div>
+            </div>
+            <div class="vstatus status-normal">Normal</div>
+            <div class="chevron">›</div>
+          </div>
+          <div class="vital-card">
+            <div class="vicon" style="color:#0a84ff">🩺</div>
+            <div class="vinfo">
+              <div class="vlabel">Blood Pressure</div>
+              <div class="vvalue">120/80 <span class="vunit">mmHg</span></div>
+            </div>
+            <div class="vstatus status-normal">Normal</div>
+            <div class="chevron">›</div>
+          </div>
+          <div class="vital-card">
+            <div class="vicon" style="color:#32d4ff">🫁</div>
+            <div class="vinfo">
+              <div class="vlabel">SpO₂</div>
+              <div class="vvalue">98 <span class="vunit">%</span></div>
+            </div>
+            <div class="vstatus status-normal">Normal</div>
+            <div class="chevron">›</div>
+          </div>
+          <div class="vital-card">
+            <div class="vicon" style="color:#30d158">🚶</div>
+            <div class="vinfo">
+              <div class="vlabel">Steps</div>
+              <div class="vvalue">8,420 <span class="vunit">count</span></div>
+            </div>
+            <div class="vstatus status-normal">Normal</div>
+            <div class="chevron">›</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="watch-label">Dashboard (tap a card)</div>
+  </div>
+
+  <!-- Vital Detail — Heart Rate -->
+  <div class="watch">
+    <div class="bezel"><div class="crown"></div><div class="side-btn"></div>
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🔋</span></div>
+        <div class="content detail">
+          <div style="font-size:0.6rem;color:#888;text-align:center;margin-bottom:6px;">‹ Heart Rate</div>
+          <div class="d-header">
+            <div class="dh-icon" style="color:#ff453a">❤️</div>
+            <div>
+              <div class="dh-value">72</div>
+              <div class="dh-unit">bpm</div>
+            </div>
+          </div>
+
+          <div class="card-box risk-gauge">
+            <div class="cb-title">⚖️ Risk Level</div>
+            <div class="rg-level status-normal">Low</div>
+            <div class="rg-score status-normal">15%</div>
+            <div class="rg-bar"><div class="rg-fill" style="width:15%;background:#30d158"></div></div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">ℹ️ What This Means</div>
+            <div class="cb-body">Your heart beats 72 times per minute at rest. Normal resting HR is 60–100 bpm.</div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">🏥 Related Conditions</div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Bradycardia (&lt;60 bpm) — slow heart rate, can be normal in athletes</div></div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Tachycardia (&gt;100 bpm) — fast heart rate, may signal stress or infection</div></div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Arrhythmia — irregular rhythm, watch for palpitations</div></div>
+          </div>
+
+          <div class="recommend-box">
+            <div class="rb-title">💡 Recommendation</div>
+            <div class="rb-body">Your heart rate is healthy. Keep up regular cardio exercise.</div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">📊 Last 10 Hours</div>
+            <div class="mini-chart">
+              <div class="mbar" style="height:40%;background:linear-gradient(#ff453a,#ff9500)"></div>
+              <div class="mbar" style="height:55%;background:linear-gradient(#ff453a,#ff9500)"></div>
+              <div class="mbar" style="height:35%;background:linear-gradient(#ff453a,#ff9500)"></div>
+              <div class="mbar" style="height:65%;background:linear-gradient(#ff453a,#ff9500)"></div>
+              <div class="mbar" style="height:50%;background:linear-gradient(#ff453a,#ff9500)"></div>
+              <div class="mbar" style="height:80%;background:linear-gradient(#ff453a,#ff9500)"></div>
+              <div class="mbar" style="height:60%;background:linear-gradient(#ff453a,#ff9500)"></div>
+              <div class="mbar" style="height:70%;background:linear-gradient(#ff453a,#ff9500)"></div>
+              <div class="mbar" style="height:45%;background:linear-gradient(#ff453a,#ff9500)"></div>
+              <div class="mbar" style="height:55%;background:linear-gradient(#ff453a,#ff9500)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="watch-label">Vital Detail — Heart Rate</div>
+  </div>
+
+  <!-- Vital Detail — Body Temp -->
+  <div class="watch">
+    <div class="bezel"><div class="crown"></div><div class="side-btn"></div>
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🔋</span></div>
+        <div class="content detail">
+          <div style="font-size:0.6rem;color:#888;text-align:center;margin-bottom:6px;">‹ Body Temp</div>
+          <div class="d-header">
+            <div class="dh-icon" style="color:#ff9500">🌡️</div>
+            <div>
+              <div class="dh-value">36.7</div>
+              <div class="dh-unit">°C</div>
+            </div>
+          </div>
+
+          <div class="card-box risk-gauge">
+            <div class="cb-title">⚖️ Risk Level</div>
+            <div class="rg-level status-normal">Low</div>
+            <div class="rg-score status-normal">8%</div>
+            <div class="rg-bar"><div class="rg-fill" style="width:8%;background:#30d158"></div></div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">ℹ️ What This Means</div>
+            <div class="cb-body">36.7°C is a normal body temperature. Fever starts at 38.0°C.</div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">🏥 Related Conditions</div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Fever (≥38°C) — body fighting infection</div></div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Hyperthermia (&gt;40°C) — medical emergency, seek help</div></div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Hypothermia (&lt;35°C) — dangerous cooling, get warm</div></div>
+          </div>
+
+          <div class="recommend-box">
+            <div class="rb-title">💡 Recommendation</div>
+            <div class="rb-body">Temperature looks great. Stay hydrated and monitor if you feel unwell.</div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">📊 Last 10 Hours</div>
+            <div class="mini-chart">
+              <div class="mbar" style="height:50%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+              <div class="mbar" style="height:45%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+              <div class="mbar" style="height:48%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+              <div class="mbar" style="height:52%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+              <div class="mbar" style="height:50%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+              <div class="mbar" style="height:55%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+              <div class="mbar" style="height:53%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+              <div class="mbar" style="height:50%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+              <div class="mbar" style="height:48%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+              <div class="mbar" style="height:46%;background:linear-gradient(#ff9500,#ffcc00)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="watch-label">Vital Detail — Body Temp</div>
+  </div>
+
+  <!-- Vital Detail — Blood Pressure -->
+  <div class="watch">
+    <div class="bezel"><div class="crown"></div><div class="side-btn"></div>
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🔋</span></div>
+        <div class="content detail">
+          <div style="font-size:0.6rem;color:#888;text-align:center;margin-bottom:6px;">‹ Blood Pressure</div>
+          <div class="d-header">
+            <div class="dh-icon" style="color:#0a84ff">🩺</div>
+            <div>
+              <div class="dh-value">120/80</div>
+              <div class="dh-unit">mmHg</div>
+            </div>
+          </div>
+
+          <div class="card-box risk-gauge">
+            <div class="cb-title">⚖️ Risk Level</div>
+            <div class="rg-level status-normal">Low</div>
+            <div class="rg-score status-normal">12%</div>
+            <div class="rg-bar"><div class="rg-fill" style="width:12%;background:#30d158"></div></div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">ℹ️ What This Means</div>
+            <div class="cb-body">120/80 mmHg is optimal. Systolic (top) should be under 130, diastolic (bottom) under 80.</div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">🏥 Related Conditions</div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Hypertension Stage 1 (130–139/80–89) — lifestyle changes needed</div></div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Hypertension Stage 2 (≥140/90) — medication may be required</div></div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Hypotension (&lt;90/60) — can cause dizziness or fainting</div></div>
+          </div>
+
+          <div class="recommend-box">
+            <div class="rb-title">💡 Recommendation</div>
+            <div class="rb-body">Blood pressure is in the optimal range. Limit salt and stay active.</div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">📊 Last 10 Hours</div>
+            <div class="mini-chart">
+              <div class="mbar" style="height:60%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+              <div class="mbar" style="height:55%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+              <div class="mbar" style="height:62%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+              <div class="mbar" style="height:50%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+              <div class="mbar" style="height:58%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+              <div class="mbar" style="height:65%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+              <div class="mbar" style="height:52%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+              <div class="mbar" style="height:48%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+              <div class="mbar" style="height:54%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+              <div class="mbar" style="height:50%;background:linear-gradient(#0a84ff,#32d4ff)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="watch-label">Vital Detail — BP</div>
+  </div>
+
+  <!-- Vital Detail — SpO₂ -->
+  <div class="watch">
+    <div class="bezel"><div class="crown"></div><div class="side-btn"></div>
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🔋</span></div>
+        <div class="content detail">
+          <div style="font-size:0.6rem;color:#888;text-align:center;margin-bottom:6px;">‹ SpO₂</div>
+          <div class="d-header">
+            <div class="dh-icon" style="color:#32d4ff">🫁</div>
+            <div>
+              <div class="dh-value">98</div>
+              <div class="dh-unit">%</div>
+            </div>
+          </div>
+
+          <div class="card-box risk-gauge">
+            <div class="cb-title">⚖️ Risk Level</div>
+            <div class="rg-level status-normal">Low</div>
+            <div class="rg-score status-normal">5%</div>
+            <div class="rg-bar"><div class="rg-fill" style="width:5%;background:#30d158"></div></div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">ℹ️ What This Means</div>
+            <div class="cb-body">98% oxygen saturation is excellent. Normal is 95–100%.</div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">🏥 Related Conditions</div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Hypoxemia (&lt;90%) — low blood oxygen, seek medical attention</div></div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">Sleep apnea — drops in SpO₂ during sleep, monitor overnight</div></div>
+            <div class="condition-row"><div class="cdot"></div><div class="ctext">COPD / asthma — chronic low SpO₂, manage with inhaler</div></div>
+          </div>
+
+          <div class="recommend-box">
+            <div class="rb-title">💡 Recommendation</div>
+            <div class="rb-body">Oxygen levels are perfect. Keep lungs healthy — avoid smoking.</div>
+          </div>
+
+          <div class="card-box">
+            <div class="cb-title">📊 Last 10 Hours</div>
+            <div class="mini-chart">
+              <div class="mbar" style="height:90%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+              <div class="mbar" style="height:88%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+              <div class="mbar" style="height:92%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+              <div class="mbar" style="height:95%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+              <div class="mbar" style="height:90%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+              <div class="mbar" style="height:94%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+              <div class="mbar" style="height:88%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+              <div class="mbar" style="height:92%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+              <div class="mbar" style="height:90%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+              <div class="mbar" style="height:93%;background:linear-gradient(#32d4ff,#0a84ff)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="watch-label">Vital Detail — SpO₂</div>
+  </div>
+
+</div>
+
+</body>
+</html>
