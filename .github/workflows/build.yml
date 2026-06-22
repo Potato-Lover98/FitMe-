@@ -13,10 +13,7 @@ concurrency:
 
 env:
   PROJECT_NAME: FitMePlus
-  SCHEME: FitMeApp
   DERIVED_DATA: build
-  ARCHIVE_PATH: build/FitMePlus.xcarchive
-  EXPORT_PATH: build/ipa
 
 jobs:
   build:
@@ -48,39 +45,39 @@ jobs:
       - name: Generate Xcode project
         run: xcodegen generate
 
-      - name: Download iOS SDK (retry up to 3 times)
+      - name: Download watchOS SDK
         run: |
           for i in 1 2 3; do
-            echo "Attempt $i/3 to download iOS SDK..."
-            xcodebuild -downloadPlatform iOS -quiet 2>&1 && break
+            echo "Attempt $i/3..."
+            xcodebuild -downloadPlatform watchOS -quiet 2>&1 && break
             if [ $i -lt 3 ]; then sleep 10; fi
           done
 
-      - name: Archive FitMeApp
+      - name: Build FitMeWatch
         run: |
-          xcodebuild archive \
+          xcodebuild build \
             -project "$PROJECT_NAME.xcodeproj" \
-            -scheme "$SCHEME" \
+            -scheme "FitMeWatch" \
             -derivedDataPath "$DERIVED_DATA" \
-            -archivePath "$ARCHIVE_PATH" \
-            -destination "generic/platform=iOS" \
+            -destination "generic/platform=watchOS" \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
-            VALIDATE_WATCH_APP_ON_BUILD=NO
+            CODE_SIGNING_ALLOWED=NO
 
-      - name: Export IPA
+      - name: Package IPA
         run: |
-          mkdir -p "$EXPORT_PATH"
-          xcodebuild -exportArchive \
-            -archivePath "$ARCHIVE_PATH" \
-            -exportPath "$EXPORT_PATH" \
-            -exportOptionsPlist exportOptions.plist
+          APP=$(find "$DERIVED_DATA" -name "FitMeWatch.app" -path "*/Release*" -type d | head -1)
+          echo "App: $APP"
+          mkdir -p Payload
+          cp -R "$APP" Payload/
+          ditto -c -k --keepParent Payload FitMeWatch.ipa
+          rm -rf Payload
+          ls -lh FitMeWatch.ipa
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: FitMePlus-IPA
-          path: ${{ env.EXPORT_PATH }}/*.ipa
+          name: FitMeWatch-IPA
+          path: FitMeWatch.ipa
           compression-level: 0
           if-no-files-found: error
