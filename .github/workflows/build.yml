@@ -57,7 +57,7 @@ jobs:
         run: |
           xcodebuild build \
             -project "$PROJECT_NAME.xcodeproj" \
-            -scheme "FitMeWatch" \
+            -target "FitMeWatch" \
             -derivedDataPath "$DERIVED_DATA" \
             -destination "generic/platform=watchOS" \
             CODE_SIGN_IDENTITY="" \
@@ -66,7 +66,7 @@ jobs:
 
       - name: Package IPA
         run: |
-          APP=$(find "$DERIVED_DATA" -name "FitMeWatch.app" -path "*/Release*" -type d | head -1)
+          APP=$(find "$DERIVED_DATA" -name "FitMeWatch.app" -path "*/Debug*" -type d | head -1)
           echo "App: $APP"
           mkdir -p Payload
           cp -R "$APP" Payload/
