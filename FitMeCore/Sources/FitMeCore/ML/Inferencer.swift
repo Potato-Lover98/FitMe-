@@ -21,7 +21,7 @@ public enum Inferencer {
             activations = output
         }
 
-        return activations[0]
+        return activations.first ?? 0
     }
 
     private static func sigmoid(_ x: Float) -> Float {

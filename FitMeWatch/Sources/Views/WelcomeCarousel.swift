@@ -4,7 +4,7 @@ struct WelcomeCarousel: View {
     @Binding var hasCompleted: Bool
     @State private var currentIndex = 0
 
-    private let pages: WelcomePage = [
+    private let pages: [WelcomePage] = [
         WelcomePage(
             icon: "heart.text.square.fill",
             iconColor: .red,
@@ -37,8 +37,8 @@ struct WelcomeCarousel: View {
 
     var body: some View {
         TabView(selection: $currentIndex) {
-            ForEach(Array(pages.enumerated()), id: \.offset) { idx, page in
-                WelcomePageView(page: page, isLast: idx == pages.count - 1) {
+            ForEach(pages.indices, id: \.self) { idx in
+                WelcomePageView(page: pages[idx], isLast: idx == pages.count - 1) {
                     hasCompleted = true
                 }
                 .tag(idx)

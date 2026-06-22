@@ -11,7 +11,7 @@ final class SensorViewModel {
     var authorizationNeeded: Bool = false
 
     private let healthKit = HealthKitManager.shared
-    private var refreshTimer: Timer?
+    nonisolated(unsafe) private var refreshTimer: Timer?
 
     init() {
         loadMockData()
@@ -107,7 +107,7 @@ final class SensorViewModel {
     static func hrStatus(_ bpm: Double) -> VitalStatus {
         switch bpm {
         case ..<50:     .low
-        case 60..<100:  .normal
+        case 50..<100:  .normal
         case 100..<120: .elevated
         default:        .high
         }

@@ -28,8 +28,10 @@ public struct MLPModel: Sendable {
     }
 
     public func weight(row: Int, col: Int, layer: Int) -> Float {
-        let cols = dims[layer + 1]
-        return weights[weightOffset(layer: layer) + row * cols + col]
+        // Weights stored row-major as [outputNeuron][inputNeuron] (nn.Linear layout).
+        // row = input index, col = output index.
+        let inputs = dims[layer]
+        return weights[weightOffset(layer: layer) + col * inputs + row]
     }
 
     public func bias(neuron: Int, layer: Int) -> Float {
@@ -47,22 +49,31 @@ public enum ModelLoader {
         let data = try Data(contentsOf: url)
         var offset = 0
 
-        let ndims = data.extractUInt32(at: &offset)
+        let ndims = try data.extractUInt32(at: &offset)
         guard ndims >= 2 else { throw LoadError.invalidFormat }
 
         var dims: [Int] = []
         for _ in 0..<Int(ndims) {
-            dims.append(Int(data.extractUInt32(at: &offset)))
+            dims.append(Int(try data.extractUInt32(at: &offset)))
+        }
+        guard dims.allSatisfy({ $0 > 0 }) else { throw LoadError.invalidFormat }
+
+        // Expected parameter count derived from layer dims (weights + biases).
+        var expected = 0
+        for l in 0..<(dims.count - 1) {
+            expected += dims[l] * dims[l + 1] + dims[l + 1]
         }
 
-        let numParams = Int(data.extractUInt32(at: &offset))
-        guard numParams > 0 else { throw LoadError.invalidFormat }
-        guard data.count >= offset + numParams * 4 else { throw LoadError.unexpectedEndOfFile }
+        let numParams = Int(try data.extractUInt32(at: &offset))
+        guard numParams > 0, numParams == expected else { throw LoadError.invalidFormat }
+        // Overflow-safe bounds check.
+        guard numParams <= (Int.max - offset) / 4,
+              data.count >= offset + numParams * 4 else { throw LoadError.unexpectedEndOfFile }
 
         var params: [Float] = []
         params.reserveCapacity(numParams)
         for _ in 0..<numParams {
-            params.append(data.extractFloat32(at: &offset))
+            params.append(try data.extractFloat32(at: &offset))
         }
 
         return MLPModel(dims: dims, weights: params)
@@ -77,7 +88,10 @@ public enum ModelLoader {
 }
 
 private extension Data {
-    func extractUInt32(at offset: inout Int) -> UInt32 {
+    func extractUInt32(at offset: inout Int) throws -> UInt32 {
+        guard offset >= 0, count >= offset + 4 else {
+            throw ModelLoader.LoadError.unexpectedEndOfFile
+        }
         let value = self.withUnsafeBytes { ptr in
             ptr.loadUnaligned(fromByteOffset: offset, as: UInt32.self)
         }
@@ -85,7 +99,10 @@ private extension Data {
         return value
     }
 
-    func extractFloat32(at offset: inout Int) -> Float {
+    func extractFloat32(at offset: inout Int) throws -> Float {
+        guard offset >= 0, count >= offset + 4 else {
+            throw ModelLoader.LoadError.unexpectedEndOfFile
+        }
         let value = self.withUnsafeBytes { ptr in
             ptr.loadUnaligned(fromByteOffset: offset, as: Float.self)
         }

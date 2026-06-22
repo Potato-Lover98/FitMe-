@@ -1,0 +1,13 @@
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/FitMeCore.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FeatureBuilder.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/Inferencer.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/ModelLoader.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/PostProcessor.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/FeverRisk.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Goal.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Reading.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/User.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/VitalType.swift
+/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Repositories.swift
+/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/DerivedSources/resource_bundle_accessor.swift

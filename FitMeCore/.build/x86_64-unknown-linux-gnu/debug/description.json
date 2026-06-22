@@ -1,0 +1,1020 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.xctest",
+      "packagePath" : "/home/yousif/Projects/FitMe+/FitMeCore",
+      "productName" : "FitMeCorePackageTests"
+    }
+  ],
+  "copyCommands" : {
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCore.resources/FitMeML.bin" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.bin"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCore.resources/FitMeML.bin"
+        }
+      ]
+    },
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCoreTests.resources/FitMeML.bin" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/Resources/FitMeML.bin"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCoreTests.resources/FitMeML.bin"
+        }
+      ]
+    }
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+    "FitMeCorePackageDiscoveredTests"
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.FitMeCore-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/opt/swift/usr/bin/swiftc",
+      "fileList" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/sources",
+      "importPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/FitMeCore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FeatureBuilder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/Inferencer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/ModelLoader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/PostProcessor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/FeverRisk.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Goal.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Reading.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/User.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/VitalType.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Repositories.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/DerivedSources/resource_bundle_accessor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<FitMeCore-x86_64-unknown-linux-gnu-debug.module-resources>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "FitMeCore",
+      "moduleOutputPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCore.swiftmodule",
+      "objects" : [
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FitMeCore.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FeatureBuilder.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FitMeML.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Inferencer.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/ModelLoader.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/PostProcessor.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FeverRisk.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Goal.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Reading.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/User.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/VitalType.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Repositories.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/resource_bundle_accessor.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+        "-module-cache-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/include/FitMeCore-Swift.h",
+        "-swift-version",
+        "5",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "fitmecore",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FitMeCore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FeatureBuilder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FitMeML.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Inferencer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/ModelLoader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/PostProcessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FeverRisk.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Goal.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Reading.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/User.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/VitalType.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Repositories.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCore.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/FitMeCore.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FeatureBuilder.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/Inferencer.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/ModelLoader.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/PostProcessor.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/FeverRisk.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Goal.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Reading.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/User.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/VitalType.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Repositories.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/DerivedSources/resource_bundle_accessor.swift"
+      ],
+      "tempsPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.FitMeCorePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/opt/swift/usr/bin/swiftc",
+      "fileList" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/sources",
+      "importPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/FitMeCoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/all-discovered-tests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "FitMeCorePackageDiscoveredTests",
+      "moduleOutputPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageDiscoveredTests.swiftmodule",
+      "objects" : [
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/FitMeCoreTests.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/all-discovered-tests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/include/FitMeCorePackageDiscoveredTests-Swift.h",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "fitmecore",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/FitMeCoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/all-discovered-tests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageDiscoveredTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/FitMeCoreTests.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/all-discovered-tests.swift"
+      ],
+      "tempsPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.FitMeCorePackageTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/opt/swift/usr/bin/swiftc",
+      "fileList" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/sources",
+      "importPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageDiscoveredTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "FitMeCorePackageTests",
+      "moduleOutputPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageTests.swiftmodule",
+      "objects" : [
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/include/FitMeCorePackageTests-Swift.h",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "fitmecore",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/opt/swift/usr/bin/swiftc",
+      "fileList" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/sources",
+      "importPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/MLTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/ModelTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/DerivedSources/resource_bundle_accessor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module-resources>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "FitMeCoreTests",
+      "moduleOutputPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCoreTests.swiftmodule",
+      "objects" : [
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/MLTests.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/ModelTests.swift.o",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/resource_bundle_accessor.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+        "-module-cache-path",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "fitmecore",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/MLTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/ModelTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCoreTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/MLTests.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/ModelTests.swift",
+        "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/DerivedSources/resource_bundle_accessor.swift"
+      ],
+      "tempsPath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "FitMeCore" : [
+      "/opt/swift/usr/bin/swiftc",
+      "-module-name",
+      "FitMeCore",
+      "-package-name",
+      "fitmecore",
+      "-c",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/FitMeCore.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FeatureBuilder.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/Inferencer.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/ModelLoader.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/PostProcessor.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/FeverRisk.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Goal.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Reading.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/User.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/VitalType.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Repositories.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/DerivedSources/resource_bundle_accessor.swift",
+      "-I",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+      "-module-cache-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/include/FitMeCore-Swift.h",
+      "-swift-version",
+      "5",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "fitmecore",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/opt/swift/usr/bin/swiftc"
+    ],
+    "FitMeCorePackageDiscoveredTests" : [
+      "/opt/swift/usr/bin/swiftc",
+      "-module-name",
+      "FitMeCorePackageDiscoveredTests",
+      "-package-name",
+      "fitmecore",
+      "-c",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/FitMeCoreTests.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/all-discovered-tests.swift",
+      "-I",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/include/FitMeCorePackageDiscoveredTests-Swift.h",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "fitmecore",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/opt/swift/usr/bin/swiftc"
+    ],
+    "FitMeCorePackageTests" : [
+      "/opt/swift/usr/bin/swiftc",
+      "-module-name",
+      "FitMeCorePackageTests",
+      "-package-name",
+      "fitmecore",
+      "-c",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.derived/runner.swift",
+      "-I",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/include/FitMeCorePackageTests-Swift.h",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "fitmecore",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/opt/swift/usr/bin/swiftc"
+    ],
+    "FitMeCoreTests" : [
+      "/opt/swift/usr/bin/swiftc",
+      "-module-name",
+      "FitMeCoreTests",
+      "-package-name",
+      "fitmecore",
+      "-c",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/MLTests.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/ModelTests.swift",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/DerivedSources/resource_bundle_accessor.swift",
+      "-I",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+      "-module-cache-path",
+      "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "fitmecore",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/opt/swift/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "FitMeCore" : [
+
+    ],
+    "FitMeCorePackageDiscoveredTests" : [
+      "FitMeCoreTests",
+      "FitMeCore"
+    ],
+    "FitMeCorePackageTests" : [
+      "FitMeCorePackageDiscoveredTests",
+      "FitMeCoreTests",
+      "FitMeCore"
+    ],
+    "FitMeCoreTests" : [
+      "FitMeCore"
+    ]
+  },
+  "testDiscoveryCommands" : {
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/all-discovered-tests.swift" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/MLTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/ModelTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/resource_bundle_accessor.swift.o"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/FitMeCoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/all-discovered-tests.swift"
+        }
+      ]
+    }
+  },
+  "testEntryPointCommands" : {
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.derived/runner.swift" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageDiscoveredTests.swiftmodule"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/FitMeCore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FeatureBuilder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/Inferencer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/ModelLoader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/PostProcessor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/FeverRisk.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Goal.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Reading.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/User.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/VitalType.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Repositories.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/DerivedSources/resource_bundle_accessor.swift"
+        }
+      ],
+      "outputFilePath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/sources"
+    },
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/FitMeCoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/all-discovered-tests.swift"
+        }
+      ],
+      "outputFilePath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/sources"
+    },
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/sources"
+    },
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FeatureBuilder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FeverRisk.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FitMeCore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FitMeCore.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/FitMeML.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Goal.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Inferencer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/ModelLoader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/PostProcessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Reading.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/Repositories.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/User.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/VitalType.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/FitMeCorePackageDiscoveredTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/FitMeCoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/all-discovered-tests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/FitMeCorePackageTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/FitMeCoreTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/MLTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/ModelTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/resource_bundle_accessor.swift.o"
+        }
+      ],
+      "outputFilePath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.product/Objects.LinkFileList"
+    },
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/MLTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/ModelTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/DerivedSources/resource_bundle_accessor.swift"
+        }
+      ],
+      "outputFilePath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/sources"
+    },
+    "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/opt/swift/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt"
+    }
+  }
+}

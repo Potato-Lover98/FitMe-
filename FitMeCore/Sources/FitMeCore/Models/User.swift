@@ -29,6 +29,7 @@ public struct User: Identifiable, Codable, Equatable, Sendable {
 
     public var bmi: Double {
         let meters = heightCm / 100
+        guard meters > 0 else { return 0 }
         return weightKg / (meters * meters)
     }
 }

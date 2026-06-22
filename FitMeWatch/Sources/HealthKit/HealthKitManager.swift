@@ -118,7 +118,7 @@ final class HealthKitManager: ObservableObject {
     }
 
     private func startWristTempQuery() {
-        let type = HKQuantityType(.bodyTemperature)
+        let type = HKQuantityType(.appleSleepingWristTemperature)
         let query = HKObserverQuery(sampleType: type, predicate: nil) { [weak self] _, _, _ in
             self?.fetchLatestValue(type: type, unit: .degreeCelsius()) { value in
                 Task { @MainActor in self?.liveWristTemp = value }
@@ -167,10 +167,15 @@ final class HealthKitManager: ObservableObject {
         let startOfDay = calendar.startOfDay(for: Date())
         let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: Date(), options: .strictStartDate)
         return await withCheckedContinuation { continuation in
-            let query = HKStatisticsQuery(quantityType: HKQuantityType(type), datePredicate: predicate, options: .cumulativeSum) { _, stats, _ in
-                let value = stats?.sumQuantity()?.doubleValue(for: unit) ?? 0
-                continuation.resume(returning: value)
-            }
+            let query = HKStatisticsQuery(
+                quantityType: HKQuantityType(type),
+                quantitySamplePredicate: predicate,
+                options: .cumulativeSum,
+                completionHandler: { _, stats, _ in
+                    let value = stats?.sumQuantity()?.doubleValue(for: unit) ?? 0
+                    continuation.resume(returning: value)
+                }
+            )
             store.execute(query)
         }
     }

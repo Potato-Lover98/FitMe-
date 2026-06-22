@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/primary.swiftdeps"
+  },
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.derived/runner.swift": {
+    "dependencies": "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/runner.d",
+    "object": "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/runner.swift.o",
+    "swiftmodule": "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/runner.swiftdeps",
+    "diagnostics": "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/runner.dia"
+  }
+}

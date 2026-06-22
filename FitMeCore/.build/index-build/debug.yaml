@@ -1,0 +1,129 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "FitMeCore-x86_64-unknown-linux-gnu-debug.module": ["<FitMeCore-x86_64-unknown-linux-gnu-debug.module>"]
+  "FitMeCorePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module": ["<FitMeCorePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module>"]
+  "FitMeCorePackageTests-x86_64-unknown-linux-gnu-debug.module": ["<FitMeCorePackageTests-x86_64-unknown-linux-gnu-debug.module>"]
+  "FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module": ["<FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<FitMeCore-x86_64-unknown-linux-gnu-debug.module>"]
+  "test": ["<FitMeCore-x86_64-unknown-linux-gnu-debug.module>","<FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module>"]
+default: "main"
+nodes:
+  "/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/FitMeCore.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FeatureBuilder.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/Inferencer.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/ModelLoader.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/PostProcessor.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/FeverRisk.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Goal.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Reading.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/User.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/VitalType.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Repositories.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/DerivedSources/resource_bundle_accessor.swift"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/sources"]
+    description: "Write auxiliary file /home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/sources"
+
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/FitMeCoreTests.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/all-discovered-tests.swift"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/sources"]
+    description: "Write auxiliary file /home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/sources"
+
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.derived/runner.swift"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/sources"]
+    description: "Write auxiliary file /home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/sources"
+
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/MLTests.swift","/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/ModelTests.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/DerivedSources/resource_bundle_accessor.swift"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/sources"]
+    description: "Write auxiliary file /home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/sources"
+
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCore.resources/FitMeML.bin":
+    tool: copy-tool
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.bin"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCore.resources/FitMeML.bin"]
+    description: "Copying /home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.bin"
+
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCoreTests.resources/FitMeML.bin":
+    tool: copy-tool
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/Resources/FitMeML.bin"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCoreTests.resources/FitMeML.bin"]
+    description: "Copying /home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/Resources/FitMeML.bin"
+
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/opt/swift/usr/bin/swiftc"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt"
+
+  "<FitMeCore-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCore.swiftmodule"]
+    outputs: ["<FitMeCore-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<FitMeCorePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageDiscoveredTests.swiftmodule"]
+    outputs: ["<FitMeCorePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<FitMeCorePackageTests-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageTests.swiftmodule"]
+    outputs: ["<FitMeCorePackageTests-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCoreTests.swiftmodule"]
+    outputs: ["<FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "C.FitMeCore-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/FitMeCore.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FeatureBuilder.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/FitMeML.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/Inferencer.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/ModelLoader.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/ML/PostProcessor.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/FeverRisk.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Goal.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/Reading.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/User.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Models/VitalType.swift","/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/Repositories.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/DerivedSources/resource_bundle_accessor.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt","<FitMeCore-x86_64-unknown-linux-gnu-debug.module-resources>","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/sources"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCore.swiftmodule"]
+    description: "Compiling Swift Module 'FitMeCore' (13 sources)"
+    args: ["/opt/swift/usr/bin/swiftc","-module-name","FitMeCore","-emit-dependencies","-emit-module","-emit-module-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCore.swiftmodule","-output-file-map","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/output-file-map.json","-parse-as-library","-incremental","@/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/sources","-I","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-incremental","-enable-batch-mode","-serialize-diagnostics","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE","-module-cache-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore.build/include/FitMeCore-Swift.h","-swift-version","5","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","fitmecore","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.FitMeCorePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/FitMeCoreTests.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/all-discovered-tests.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCoreTests.swiftmodule","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/sources"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageDiscoveredTests.swiftmodule"]
+    description: "Compiling Swift Module 'FitMeCorePackageDiscoveredTests' (2 sources)"
+    args: ["/opt/swift/usr/bin/swiftc","-module-name","FitMeCorePackageDiscoveredTests","-emit-dependencies","-emit-module","-emit-module-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageDiscoveredTests.swiftmodule","-output-file-map","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/output-file-map.json","-parse-as-library","-incremental","@/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/sources","-I","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-incremental","-enable-batch-mode","-serialize-diagnostics","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/include/FitMeCorePackageDiscoveredTests-Swift.h","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","fitmecore","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.FitMeCorePackageTests-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.derived/runner.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCoreTests.swiftmodule","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageDiscoveredTests.swiftmodule","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/sources"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'FitMeCorePackageTests' (1 sources)"
+    args: ["/opt/swift/usr/bin/swiftc","-module-name","FitMeCorePackageTests","-emit-dependencies","-emit-module","-emit-module-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCorePackageTests.swiftmodule","-output-file-map","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/output-file-map.json","-parse-as-library","-incremental","@/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/sources","-I","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-incremental","-enable-batch-mode","-serialize-diagnostics","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageTests.build/include/FitMeCorePackageTests-Swift.h","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","fitmecore","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/MLTests.swift","/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/ModelTests.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/DerivedSources/resource_bundle_accessor.swift","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/swift-version-6A52383ED409C6A7.txt","<FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module-resources>","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCore.swiftmodule","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/sources"]
+    outputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCoreTests.swiftmodule"]
+    description: "Compiling Swift Module 'FitMeCoreTests' (3 sources)"
+    args: ["/opt/swift/usr/bin/swiftc","-module-name","FitMeCoreTests","-emit-dependencies","-emit-module","-emit-module-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules/FitMeCoreTests.swiftmodule","-output-file-map","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/output-file-map.json","-parse-as-library","-incremental","@/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCoreTests.build/sources","-I","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-incremental","-enable-batch-mode","-serialize-diagnostics","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE","-module-cache-path","/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-swift-version","5","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","fitmecore","-Xcc","-fno-omit-frame-pointer"]
+
+  "FitMeCore-x86_64-unknown-linux-gnu-debug.module-resources":
+    tool: phony
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCore.resources/FitMeML.bin"]
+    outputs: ["<FitMeCore-x86_64-unknown-linux-gnu-debug.module-resources>"]
+
+  "FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module-resources":
+    tool: phony
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/.build/index-build/x86_64-unknown-linux-gnu/debug/FitMeCore_FitMeCoreTests.resources/FitMeML.bin"]
+    outputs: ["<FitMeCoreTests-x86_64-unknown-linux-gnu-debug.module-resources>"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/home/yousif/Projects/FitMe+/FitMeCore/Sources/FitMeCore/","/home/yousif/Projects/FitMe+/FitMeCore/Tests/FitMeCoreTests/","/home/yousif/Projects/FitMe+/FitMeCore/Package.swift","/home/yousif/Projects/FitMe+/FitMeCore/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

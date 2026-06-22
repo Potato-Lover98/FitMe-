@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/primary.swiftdeps"
+  },
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/FitMeCoreTests.swift": {
+    "dependencies": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/FitMeCoreTests.d",
+    "object": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/FitMeCoreTests.swift.o",
+    "swiftmodule": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/FitMeCoreTests~partial.swiftmodule",
+    "swift-dependencies": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/FitMeCoreTests.swiftdeps",
+    "diagnostics": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/FitMeCoreTests.dia"
+  },
+  "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.derived/all-discovered-tests.swift": {
+    "dependencies": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/all-discovered-tests.d",
+    "object": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/all-discovered-tests.swift.o",
+    "swiftmodule": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/all-discovered-tests~partial.swiftmodule",
+    "swift-dependencies": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/all-discovered-tests.swiftdeps",
+    "diagnostics": "/home/yousif/Projects/FitMe+/FitMeCore/.build/x86_64-unknown-linux-gnu/debug/FitMeCorePackageDiscoveredTests.build/all-discovered-tests.dia"
+  }
+}

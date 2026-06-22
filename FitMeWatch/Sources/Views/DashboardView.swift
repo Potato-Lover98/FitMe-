@@ -20,9 +20,6 @@ struct DashboardView: View {
         .task {
             await viewModel.requestHealthKitAndLoad()
         }
-        .onDisappear {
-            viewModel.loadMockData()
-        }
     }
 
     @ViewBuilder
