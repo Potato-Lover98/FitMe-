@@ -54,22 +54,24 @@ jobs:
             if [ $i -lt 3 ]; then sleep 10; fi
           done
 
-      - name: Build FitMeApp (iOS)
+      - name: Build FitMeApp (iOS, Release)
         run: |
           xcodebuild build \
             -project "$PROJECT_NAME.xcodeproj" \
             -scheme "FitMeApp" \
+            -configuration Release \
             -derivedDataPath "$DERIVED_DATA" \
             -destination "generic/platform=iOS" \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO
 
-      - name: Build FitMeWatch (watchOS)
+      - name: Build FitMeWatch (watchOS, Release)
         run: |
           xcodebuild build \
             -project "$PROJECT_NAME.xcodeproj" \
             -scheme "FitMeWatch" \
+            -configuration Release \
             -derivedDataPath "$DERIVED_DATA" \
             -destination "generic/platform=watchOS" \
             CODE_SIGN_IDENTITY="" \
@@ -78,8 +80,8 @@ jobs:
 
       - name: Embed watch app and package IPA
         run: |
-          IOS_APP=$(find "$DERIVED_DATA" -name "FitMeApp.app" -path "*/Debug*" -type d | head -1)
-          WATCH_APP=$(find "$DERIVED_DATA" -name "FitMeWatch.app" -path "*/Debug*" -type d | head -1)
+          IOS_APP=$(find "$DERIVED_DATA" -name "FitMeApp.app" -path "*/Release*" -type d | head -1)
+          WATCH_APP=$(find "$DERIVED_DATA" -name "FitMeWatch.app" -path "*/Release*" -type d | head -1)
           echo "iOS app: $IOS_APP"
           echo "Watch app: $WATCH_APP"
 
@@ -87,9 +89,8 @@ jobs:
           mkdir -p "$IOS_APP/Watch"
           cp -R "$WATCH_APP" "$IOS_APP/Watch/"
 
-          # Strip debug dylibs
-          find "$IOS_APP" -name "*.dylib" -delete
-          find "$IOS_APP/Watch/FitMeWatch.app" -name "*.dylib" -delete
+          # Ensure no debug dylibs leak through
+          find "$IOS_APP" -name "*.dylib" -delete 2>/dev/null || true
 
           # Add WKWatchKitApp to iOS Info.plist
           /usr/libexec/PlistBuddy -c "Add :WKWatchKitApp bool true" "$IOS_APP/Info.plist" 2>/dev/null || \
