@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BCA98A102972E9B386BD17F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72005DE96FEC07DF96F1037D /* ContentView.swift */; };
+		468BEBBEBB23CF5BBC984086 /* WelcomeCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3AA4B70F0E78D0AB79E9A2 /* WelcomeCarousel.swift */; };
+		4BB9EBD32794EC1B9B0F9E7E /* VitalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C82B10AC4F5B7FA52A498 /* VitalCard.swift */; };
+		714420FE7587F85C87F0398F /* SensorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAC8844E73BDAD572738840 /* SensorViewModel.swift */; };
+		ABA44CF9ABE280055B86C6CA /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A72AA651B2E8D2CE1D55C9 /* HealthKitManager.swift */; };
+		D460D447C198AA15C42567CA /* FitMeCore in Frameworks */ = {isa = PBXBuildFile; productRef = D2391D33C8CC004FF49A3E8F /* FitMeCore */; };
+		D6A9009B5DF01F1B83357671 /* VitalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CA7983A2E7EF5DEE7F6B3 /* VitalDetailView.swift */; };
+		E91360606E28C692D9A1D06C /* FitMeWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34CAF856009FB1BB9AB1AE9 /* FitMeWatchApp.swift */; };
+		FC070E51883AF36718ACBF9A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349641482B99F8E7E65E41B /* DashboardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3C5FE51DEE93B39DEF023D79 /* FitMeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitMeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4349641482B99F8E7E65E41B /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		4A4C650D2CB7BF8BEAA33B32 /* FitMeCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FitMeCore; path = FitMeCore; sourceTree = SOURCE_ROOT; };
+		627CA7983A2E7EF5DEE7F6B3 /* VitalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalDetailView.swift; sourceTree = "<group>"; };
+		64A72AA651B2E8D2CE1D55C9 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		72005DE96FEC07DF96F1037D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A34CAF856009FB1BB9AB1AE9 /* FitMeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitMeWatchApp.swift; sourceTree = "<group>"; };
+		BF1C82B10AC4F5B7FA52A498 /* VitalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalCard.swift; sourceTree = "<group>"; };
+		FB3AA4B70F0E78D0AB79E9A2 /* WelcomeCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCarousel.swift; sourceTree = "<group>"; };
+		FDAC8844E73BDAD572738840 /* SensorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0CB0FCF1704FAB1F1DFA94F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D460D447C198AA15C42567CA /* FitMeCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C09EFC8257746885C43FE77 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4A4C650D2CB7BF8BEAA33B32 /* FitMeCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		1C1E2778970FB85DEB970B9F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				72005DE96FEC07DF96F1037D /* ContentView.swift */,
+				A34CAF856009FB1BB9AB1AE9 /* FitMeWatchApp.swift */,
+				CDB51B9C6D1486043E9B10A7 /* HealthKit */,
+				22ADA25774B7052EA2E861C6 /* Models */,
+				A731728980EA358FEAEDA6F1 /* ViewModels */,
+				A9644E00C9348802D8CE2F0D /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		22ADA25774B7052EA2E861C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF1C82B10AC4F5B7FA52A498 /* VitalCard.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3FE18A393E81EAC1D282B1D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		42C0D8D804FC3870390D276F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C5FE51DEE93B39DEF023D79 /* FitMeWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A731728980EA358FEAEDA6F1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FDAC8844E73BDAD572738840 /* SensorViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A9644E00C9348802D8CE2F0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4349641482B99F8E7E65E41B /* DashboardView.swift */,
+				627CA7983A2E7EF5DEE7F6B3 /* VitalDetailView.swift */,
+				FB3AA4B70F0E78D0AB79E9A2 /* WelcomeCarousel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C50026011613971BBC8A8D94 = {
+			isa = PBXGroup;
+			children = (
+				E4AD94EA5934325CF254DE6E /* FitMeWatch */,
+				1C09EFC8257746885C43FE77 /* Packages */,
+				42C0D8D804FC3870390D276F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDB51B9C6D1486043E9B10A7 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				64A72AA651B2E8D2CE1D55C9 /* HealthKitManager.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		E4AD94EA5934325CF254DE6E /* FitMeWatch */ = {
+			isa = PBXGroup;
+			children = (
+				3FE18A393E81EAC1D282B1D8 /* Resources */,
+				1C1E2778970FB85DEB970B9F /* Sources */,
+			);
+			path = FitMeWatch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6BB743DD96F81FA666CA14BD /* FitMeWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBBDC317FE14C22092198B37 /* Build configuration list for PBXNativeTarget "FitMeWatch" */;
+			buildPhases = (
+				C01310E3C05C2CFEF6DB2B1B /* Sources */,
+				0CB0FCF1704FAB1F1DFA94F6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FitMeWatch;
+			packageProductDependencies = (
+				D2391D33C8CC004FF49A3E8F /* FitMeCore */,
+			);
+			productName = FitMeWatch;
+			productReference = 3C5FE51DEE93B39DEF023D79 /* FitMeWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48E449CDF4A352D7CF210E9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = AAF41A0A087184D16AD3A523 /* Build configuration list for PBXProject "FitMePlus" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C50026011613971BBC8A8D94;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B99DEFA067E6697C881F9A90 /* XCLocalSwiftPackageReference "FitMeCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 42C0D8D804FC3870390D276F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6BB743DD96F81FA666CA14BD /* FitMeWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C01310E3C05C2CFEF6DB2B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BCA98A102972E9B386BD17F /* ContentView.swift in Sources */,
+				FC070E51883AF36718ACBF9A /* DashboardView.swift in Sources */,
+				E91360606E28C692D9A1D06C /* FitMeWatchApp.swift in Sources */,
+				ABA44CF9ABE280055B86C6CA /* HealthKitManager.swift in Sources */,
+				714420FE7587F85C87F0398F /* SensorViewModel.swift in Sources */,
+				4BB9EBD32794EC1B9B0F9E7E /* VitalCard.swift in Sources */,
+				D6A9009B5DF01F1B83357671 /* VitalDetailView.swift in Sources */,
+				468BEBBEBB23CF5BBC984086 /* WelcomeCarousel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1A579010B02ABA6E82081761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitMeWatch/Info.plist;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fitme.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		253ED643F791EEE3B1769E06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		6B055E910385E36373361E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitMeWatch/Info.plist;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fitme.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		B17058ADD81E2143EDB1DC47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAF41A0A087184D16AD3A523 /* Build configuration list for PBXProject "FitMePlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B17058ADD81E2143EDB1DC47 /* Debug */,
+				253ED643F791EEE3B1769E06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BBBDC317FE14C22092198B37 /* Build configuration list for PBXNativeTarget "FitMeWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A579010B02ABA6E82081761 /* Debug */,
+				6B055E910385E36373361E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B99DEFA067E6697C881F9A90 /* XCLocalSwiftPackageReference "FitMeCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = FitMeCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D2391D33C8CC004FF49A3E8F /* FitMeCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FitMeCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 48E449CDF4A352D7CF210E9F /* Project object */;
+}
