@@ -62,6 +62,7 @@ targets:
         CFBundleShortVersionString: "0.1.0"
         CFBundleVersion: "1"
         WKApplication: true
+        WKCompanionAppBundleIdentifier: com.fitme.app
         UIBackgroundModes:
           - bluetooth-central
         NSHealthShareUsageDescription: "FitMe+ reads your health data to display vitals and generate insights."
@@ -69,7 +70,7 @@ targets:
         NSBluetoothAlwaysUsageDescription: "FitMe+ connects to Bluetooth thermometers and blood pressure cuffs."
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.fitme.watch
+        PRODUCT_BUNDLE_IDENTIFIER: com.fitme.app.watchkitapp
         MARKETING_VERSION: "0.1.0"
         CURRENT_PROJECT_VERSION: "1"
         ENABLE_BITCODE: NO

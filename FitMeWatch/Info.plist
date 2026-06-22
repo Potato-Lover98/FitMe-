@@ -32,5 +32,7 @@
 	</array>
 	<key>WKApplication</key>
 	<true/>
+	<key>WKCompanionAppBundleIdentifier</key>
+	<string>com.fitme.app</string>
 </dict>
 </plist>
