@@ -76,7 +76,7 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO
 
-      - name: Embed watch app in iOS app and package IPA
+      - name: Embed watch app and package IPA
         run: |
           IOS_APP=$(find "$DERIVED_DATA" -name "FitMeApp.app" -path "*/Debug*" -type d | head -1)
           WATCH_APP=$(find "$DERIVED_DATA" -name "FitMeWatch.app" -path "*/Debug*" -type d | head -1)
@@ -87,21 +87,18 @@ jobs:
           mkdir -p "$IOS_APP/Watch"
           cp -R "$WATCH_APP" "$IOS_APP/Watch/"
 
-          # Strip debug dylibs (preview.dylib, *.debug.dylib) that AltStore rejects
+          # Strip debug dylibs
           find "$IOS_APP" -name "*.dylib" -delete
           find "$IOS_APP/Watch/FitMeWatch.app" -name "*.dylib" -delete
 
-          # Add WKWatchKitApp to iOS Info.plist so AltStore recognizes it
+          # Add WKWatchKitApp to iOS Info.plist
           /usr/libexec/PlistBuddy -c "Add :WKWatchKitApp bool true" "$IOS_APP/Info.plist" 2>/dev/null || \
           /usr/libexec/PlistBuddy -c "Set :WKWatchKitApp true" "$IOS_APP/Info.plist"
 
-          # Add WKWatchKitApp to watch Info.plist
-          /usr/libexec/PlistBuddy -c "Add :WKWatchKitApp bool true" "$IOS_APP/Watch/FitMeWatch.app/Info.plist" 2>/dev/null || true
-
-          # Package IPA
+          # Package IPA using standard zip (AltSign uses minizip)
           mkdir -p Payload
           cp -R "$IOS_APP" Payload/
-          ditto -c -k --keepParent Payload "${IPA_NAME}.ipa"
+          zip -r -X "${IPA_NAME}.ipa" Payload/ -0
           rm -rf Payload
           ls -lh "${IPA_NAME}.ipa"
 
