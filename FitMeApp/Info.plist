@@ -20,17 +20,11 @@
 	<string>0.1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>FitMe+ connects to Bluetooth thermometers and blood pressure cuffs.</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>FitMe+ reads your health data to display vitals and generate insights.</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>FitMe+ writes manual readings to HealthKit to keep your history unified.</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>bluetooth-central</string>
-	</array>
-	<key>WKApplication</key>
+	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>FitMe+ reads your health data to display vitals.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>FitMe+ writes manual readings to HealthKit.</string>
 </dict>
 </plist>

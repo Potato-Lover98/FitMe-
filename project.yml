@@ -3,6 +3,7 @@ options:
   bundleIdPrefix: com.fitme
   deploymentTarget:
     watchOS: "10.0"
+    iOS: "17.0"
   createIntermediateGroups: true
 
 packages:
@@ -10,6 +11,34 @@ packages:
     path: FitMeCore
 
 targets:
+  FitMeApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: FitMeApp/Sources
+      - path: FitMeApp/Resources
+    dependencies:
+      - package: FitMeCore
+      - target: FitMeWatch
+        embed: true
+    info:
+      path: FitMeApp/Info.plist
+      properties:
+        CFBundleDisplayName: FitMe+
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        LSRequiresIPhoneOS: true
+        NSHealthShareUsageDescription: "FitMe+ reads your health data to display vitals."
+        NSHealthUpdateUsageDescription: "FitMe+ writes manual readings to HealthKit."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.fitme.app
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1"
+
   FitMeWatch:
     type: application
     platform: watchOS
@@ -17,6 +46,7 @@ targets:
     sources:
       - path: FitMeWatch/Sources
       - path: FitMeWatch/Resources
+      - path: FitMeWatch/FitMeWatch.entitlements
     dependencies:
       - package: FitMeCore
     info:
@@ -26,7 +56,6 @@ targets:
         CFBundleShortVersionString: "0.1.0"
         CFBundleVersion: "1"
         WKApplication: true
-        WKWatchOnly: true
         UIBackgroundModes:
           - bluetooth-central
         NSHealthShareUsageDescription: "FitMe+ reads your health data to display vitals and generate insights."
@@ -40,3 +69,4 @@ targets:
         ENABLE_BITCODE: NO
         SWIFT_VERSION: "5.9"
         GENERATE_INFOPLIST_FILE: NO
+        CODE_SIGN_ENTITLEMENTS: FitMeWatch/FitMeWatch.entitlements

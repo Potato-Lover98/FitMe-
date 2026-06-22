@@ -1,17 +1,17 @@
 # FitMe+ — Health Tracking App Plan
 
-A comprehensive **watchOS-only** app that unifies health metrics (blood pressure, temperature, fever likelihood, and many more) into a single Swift codebase. No iPhone app — everything runs on Apple Watch.
+A comprehensive health tracking app that unifies health metrics (blood pressure, temperature, fever likelihood, and many more) into a single Swift codebase. The **full app runs on Apple Watch** — the iPhone companion is a stripped-down dashboard that mirrors watch data.
 
 ## Development Phases
 
 Build is sequenced into phases. Each phase must build green (`xcodebuild`) and pass `swift test` before moving to the next. Phases are additive — later phases extend the scaffolding laid down in earlier ones. No phase is considered done until its verification command passes.
 
 ### Phase 0 — Project Foundation
-- Create Xcode workspace with two targets: `FitMeWatch` (watchOS), `FitMeCore` (shared Swift package)
-- Wire up `FitMeCore` as a dependency of `FitMeWatch`
-- Set min deployment (watchOS 10+), bundle ID, capabilities (HealthKit, Bluetooth)
-- Empty but launching app on watchOS Simulator
-- **Verify:** `xcodebuild -scheme FitMeWatch` succeeds
+- Create Xcode workspace with three targets: `FitMeApp` (iOS), `FitMeWatch` (watchOS), `FitMeCore` (shared Swift package)
+- Wire up `FitMeCore` as a dependency of both app targets
+- Set min deployments (iOS 17+, watchOS 10+), bundle IDs, capabilities (HealthKit, Bluetooth)
+- Empty but launching apps on each simulator
+- **Verify:** `xcodebuild -scheme FitMeApp` and `xcodebuild -scheme FitMeWatch` both succeed
 
 ### Phase 1 — Core Models & Domain Layer
 - Define `VitalType` enum and all supported vitals
@@ -22,14 +22,15 @@ Build is sequenced into phases. Each phase must build green (`xcodebuild`) and p
 
 ### Phase 2 — UI Scaffolding (Mock Data)
 - Build all screens with hardcoded/mock data — no live data sources yet
+- `FitMeApp`: Dashboard (vital cards, watch banner), no settings/insights/details — stripped companion
 - `FitMeWatch`: Onboarding, Dashboard (vital cards), Details (charts + history), Insights, Profile/Settings, Quick Add form, Live Activity placeholder, Complication placeholder
 - Navigation, tabs, styling, accessibility — production-quality visual shell
-- **Verify:** scheme builds; screens navigate with mock data
+- **Verify:** both schemes build; screens navigate with mock data
 
 ### Phase 3 — HealthKit Integration
 - HealthKit permission request flow in onboarding
 - `HealthKitManager`: queries, anchored queries, observer queries per `VitalType`
-- Live HR/HRV streaming on Watch
+- Live HR/HRV streaming on Watch; background samples on iPhone
 - Wire real HealthKit data into the scaffolded UI (replace mock feeds)
 - **Verify:** builds; HealthKit data renders in Dashboard on simulator
 
@@ -40,7 +41,7 @@ Build is sequenced into phases. Each phase must build green (`xcodebuild`) and p
 - **Verify:** builds; manual scan/connect test on device
 
 ### Phase 5 — Persistence & Sync
-- SwiftData store on Watch (reading history, goals, user profile)
+- SwiftData stores on Watch (reading history, goals, user profile)
 - Repository implementations backed by SwiftData + HealthKit
 - Migrate UI from mock repositories to real ones
 - **Verify:** `swift test` for repository layer; data persists across app launches
@@ -94,10 +95,10 @@ Build is sequenced into phases. Each phase must build green (`xcodebuild`) and p
 
 ## Tech Stack & Architecture
 - **Language:** Swift 5.9+, SwiftUI (declarative UI), SwiftConcurrency (async/await)
-- **Platforms:** watchOS 10+ app, shared Swift package
-- **Persistence:** SwiftData (on Watch), HealthKit (canonical store)
-- **Min target:** Apple Watch (GPS + Cellular optional)
-- **Project structure:** Xcode workspace with two targets: `FitMeWatch`, `FitMeCore` (shared Swift package)
+- **Platforms:** iOS 17+ app, watchOS 10+ companion, shared Swift package
+- **Persistence:** SwiftData (iPhone), HealthKit (canonical store), WatchConnectivity (sync)
+- **Min target:** iPhone, Apple Watch (GPS + Cellular optional)
+- **Project structure:** Xcode workspace with three targets: `FitMeApp`, `FitMeWatch`, `FitMeCore` (shared Swift package)
 
 ## Core Features
 
@@ -105,7 +106,11 @@ Build is sequenced into phases. Each phase must build green (`xcodebuild`) and p
 - **Blood Pressure** — manual entry + HealthKit import; charts, trends, WHO classification
 - **Body Temperature** — manual entry, thermistor-enabled accessories, CHT (CoreBluetooth) integration
 - **Fever Likelihood Engine** — combines temp, HR, HRV, user symptoms → risk score (0–100%)
-- **Heart Rate / HRV** — HealthKit live streaming on Watch
+- **Heart Rate / HRV** — HealthKit live streaming on Watch, background samples on iPhone
+- **SpO₂, Respiratory Rate** — HealthKit
+- **Blood Oxygen, Glucose** (manual/CGM via HealthKit)
+- **Weight / BMI / Body Fat** — HealthKit + manual
+- **Sleep, Steps, Active Energy, Hydration, Mood/Stress** — HealthKit + manual logs
 - **SpO₂, Respiratory Rate** — HealthKit
 - **Blood Oxygen, Glucose** (manual/CGM via HealthKit)
 - **Weight / BMI / Body Fat** — HealthKit + manual
@@ -115,7 +120,7 @@ Build is sequenced into phases. Each phase must build green (`xcodebuild`) and p
 - Trend detection, anomaly alerts (e.g., sustained elevated BP), personalized recommendations, weekly/monthly reports, exportable PDF
 
 ### 3. Notifications & Alerts
-- High BP, fever onset, low SpO₂, missed medication, irregular rhythm (Watch)
+- High BP, fever onset, low SpO₂, missed medication, irregular rhythm (Watch + iPhone)
 
 ### 4. Apple Watch Experience
 - Complications (Modular, Circular, Corner) showing today's key vitals
@@ -171,6 +176,13 @@ FitMeCore (shared)
 ├── ML              (FitMeML.bin loader, inferencer, features)
 └── Persistence     (SwiftData on Watch)
 
+FitMeApp (iPhone)
+├── Dashboard       (cards per vital, today summary)
+├── Details         (charts, history, add reading)
+├── Insights        (weekly/monthly, recommendations)
+├── Profile/Settings
+└── Onboarding      (permissions, profile, goals)
+
 FitMeWatch
 ├── Dashboard       (cards per vital, today summary)
 ├── Details         (charts, history, add reading)
@@ -188,6 +200,7 @@ FitMeWatch
 - `FeverRisk { score, contributing factors, timestamp }`
 
 ## Build & Verify Commands
+- `xcodebuild -scheme FitMeApp -destination 'platform=iOS Simulator,name=iPhone 15'` — build iPhone app
 - `xcodebuild -scheme FitMeWatch -destination 'platform=watchOS Simulator,name=Apple Watch Series 9'` — build Watch app
 - `swift test` — run FitMeCore unit tests (including ML inferencer golden-value tests)
 - Run ML validation script before bumping `FitMeML.bin`: must beat heuristic baseline on held-out set

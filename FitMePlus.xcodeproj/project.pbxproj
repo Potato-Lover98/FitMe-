@@ -8,23 +8,55 @@
 
 /* Begin PBXBuildFile section */
 		0BCA98A102972E9B386BD17F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72005DE96FEC07DF96F1037D /* ContentView.swift */; };
+		201AE7C4BE89B014BF009754 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C71BB5AB8839BD8B699292 /* DashboardView.swift */; };
 		468BEBBEBB23CF5BBC984086 /* WelcomeCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3AA4B70F0E78D0AB79E9A2 /* WelcomeCarousel.swift */; };
 		4BB9EBD32794EC1B9B0F9E7E /* VitalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C82B10AC4F5B7FA52A498 /* VitalCard.swift */; };
+		567FA14CADE5A2207697B0C9 /* FitMeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 71F703ECB7292CF1BA5DD4C6 /* FitMeCore */; };
+		57F0C746BD52FA084D80C110 /* FitMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B185B14839839E98043DC /* FitMeApp.swift */; };
 		714420FE7587F85C87F0398F /* SensorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAC8844E73BDAD572738840 /* SensorViewModel.swift */; };
 		ABA44CF9ABE280055B86C6CA /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A72AA651B2E8D2CE1D55C9 /* HealthKitManager.swift */; };
+		AEC024DC4ACFA3AEB43B5770 /* FitMeWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3C5FE51DEE93B39DEF023D79 /* FitMeWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D460D447C198AA15C42567CA /* FitMeCore in Frameworks */ = {isa = PBXBuildFile; productRef = D2391D33C8CC004FF49A3E8F /* FitMeCore */; };
 		D6A9009B5DF01F1B83357671 /* VitalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CA7983A2E7EF5DEE7F6B3 /* VitalDetailView.swift */; };
 		E91360606E28C692D9A1D06C /* FitMeWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34CAF856009FB1BB9AB1AE9 /* FitMeWatchApp.swift */; };
 		FC070E51883AF36718ACBF9A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349641482B99F8E7E65E41B /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		140B649D0C2327C00C2CBDB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48E449CDF4A352D7CF210E9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BB743DD96F81FA666CA14BD;
+			remoteInfo = FitMeWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		53A6EEC125FA270292351DB1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				AEC024DC4ACFA3AEB43B5770 /* FitMeWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		004B185B14839839E98043DC /* FitMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitMeApp.swift; sourceTree = "<group>"; };
+		093D9DB50F285AFD324A4A38 /* FitMeApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FitMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5FE51DEE93B39DEF023D79 /* FitMeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitMeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4349641482B99F8E7E65E41B /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		4A4C650D2CB7BF8BEAA33B32 /* FitMeCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FitMeCore; path = FitMeCore; sourceTree = SOURCE_ROOT; };
 		627CA7983A2E7EF5DEE7F6B3 /* VitalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalDetailView.swift; sourceTree = "<group>"; };
 		64A72AA651B2E8D2CE1D55C9 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		70C71BB5AB8839BD8B699292 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		72005DE96FEC07DF96F1037D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		73ED090E3C0CF7E33B44BE22 /* FitMeWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitMeWatch.entitlements; sourceTree = "<group>"; };
 		A34CAF856009FB1BB9AB1AE9 /* FitMeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitMeWatchApp.swift; sourceTree = "<group>"; };
 		BF1C82B10AC4F5B7FA52A498 /* VitalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalCard.swift; sourceTree = "<group>"; };
 		FB3AA4B70F0E78D0AB79E9A2 /* WelcomeCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCarousel.swift; sourceTree = "<group>"; };
@@ -37,6 +69,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D460D447C198AA15C42567CA /* FitMeCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4201B45403006D0111686376 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				567FA14CADE5A2207697B0C9 /* FitMeCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,9 +122,26 @@
 		42C0D8D804FC3870390D276F /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				093D9DB50F285AFD324A4A38 /* FitMeApp.app */,
 				3C5FE51DEE93B39DEF023D79 /* FitMeWatch.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		592206BA76F1A06621001CD8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				70C71BB5AB8839BD8B699292 /* DashboardView.swift */,
+				004B185B14839839E98043DC /* FitMeApp.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8CC3A3D9674382B403B6AF45 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A731728980EA358FEAEDA6F1 /* ViewModels */ = {
@@ -108,10 +165,20 @@
 		C50026011613971BBC8A8D94 = {
 			isa = PBXGroup;
 			children = (
+				C9F2EC2CCD8755388E9D74B3 /* FitMeApp */,
 				E4AD94EA5934325CF254DE6E /* FitMeWatch */,
 				1C09EFC8257746885C43FE77 /* Packages */,
 				42C0D8D804FC3870390D276F /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		C9F2EC2CCD8755388E9D74B3 /* FitMeApp */ = {
+			isa = PBXGroup;
+			children = (
+				8CC3A3D9674382B403B6AF45 /* Resources */,
+				592206BA76F1A06621001CD8 /* Sources */,
+			);
+			path = FitMeApp;
 			sourceTree = "<group>";
 		};
 		CDB51B9C6D1486043E9B10A7 /* HealthKit */ = {
@@ -125,6 +192,7 @@
 		E4AD94EA5934325CF254DE6E /* FitMeWatch */ = {
 			isa = PBXGroup;
 			children = (
+				73ED090E3C0CF7E33B44BE22 /* FitMeWatch.entitlements */,
 				3FE18A393E81EAC1D282B1D8 /* Resources */,
 				1C1E2778970FB85DEB970B9F /* Sources */,
 			);
@@ -134,6 +202,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		195F92776CC555C5938249BD /* FitMeApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9226D2ACFB1438E1AB26B4C /* Build configuration list for PBXNativeTarget "FitMeApp" */;
+			buildPhases = (
+				5C5E43621F73C7111098161D /* Sources */,
+				4201B45403006D0111686376 /* Frameworks */,
+				53A6EEC125FA270292351DB1 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE5A326B37C94258D8298465 /* PBXTargetDependency */,
+			);
+			name = FitMeApp;
+			packageProductDependencies = (
+				71F703ECB7292CF1BA5DD4C6 /* FitMeCore */,
+			);
+			productName = FitMeApp;
+			productReference = 093D9DB50F285AFD324A4A38 /* FitMeApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		6BB743DD96F81FA666CA14BD /* FitMeWatch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBBDC317FE14C22092198B37 /* Build configuration list for PBXNativeTarget "FitMeWatch" */;
@@ -181,12 +270,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				195F92776CC555C5938249BD /* FitMeApp */,
 				6BB743DD96F81FA666CA14BD /* FitMeWatch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5C5E43621F73C7111098161D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201AE7C4BE89B014BF009754 /* DashboardView.swift in Sources */,
+				57F0C746BD52FA084D80C110 /* FitMeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C01310E3C05C2CFEF6DB2B1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,11 +303,20 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BE5A326B37C94258D8298465 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BB743DD96F81FA666CA14BD /* FitMeWatch */;
+			targetProxy = 140B649D0C2327C00C2CBDB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		1A579010B02ABA6E82081761 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FitMeWatch/FitMeWatch.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -268,10 +376,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -279,10 +387,51 @@
 			};
 			name = Release;
 		};
+		3BD98D72DA19A4A015D60C47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = FitMeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fitme.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		67C2F7E6369665C24F320103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = FitMeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fitme.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 		6B055E910385E36373361E96 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FitMeWatch/FitMeWatch.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -348,11 +497,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -368,6 +517,15 @@
 			buildConfigurations = (
 				B17058ADD81E2143EDB1DC47 /* Debug */,
 				253ED643F791EEE3B1769E06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B9226D2ACFB1438E1AB26B4C /* Build configuration list for PBXNativeTarget "FitMeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67C2F7E6369665C24F320103 /* Debug */,
+				3BD98D72DA19A4A015D60C47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -391,6 +549,10 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		71F703ECB7292CF1BA5DD4C6 /* FitMeCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FitMeCore;
+		};
 		D2391D33C8CC004FF49A3E8F /* FitMeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FitMeCore;
