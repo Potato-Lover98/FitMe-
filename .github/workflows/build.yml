@@ -57,7 +57,7 @@ jobs:
         run: |
           xcodebuild build \
             -project "$PROJECT_NAME.xcodeproj" \
-            -target "FitMeWatch" \
+            -scheme "FitMeWatch" \
             -derivedDataPath "$DERIVED_DATA" \
             -destination "generic/platform=watchOS" \
             CODE_SIGN_IDENTITY="" \
