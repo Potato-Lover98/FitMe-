@@ -87,11 +87,15 @@ jobs:
           mkdir -p "$IOS_APP/Watch"
           cp -R "$WATCH_APP" "$IOS_APP/Watch/"
 
+          # Strip debug dylibs (preview.dylib, *.debug.dylib) that AltStore rejects
+          find "$IOS_APP" -name "*.dylib" -delete
+          find "$IOS_APP/Watch/FitMeWatch.app" -name "*.dylib" -delete
+
           # Add WKWatchKitApp to iOS Info.plist so AltStore recognizes it
           /usr/libexec/PlistBuddy -c "Add :WKWatchKitApp bool true" "$IOS_APP/Info.plist" 2>/dev/null || \
           /usr/libexec/PlistBuddy -c "Set :WKWatchKitApp true" "$IOS_APP/Info.plist"
 
-          # Add WKCompanionAppBundleIdentifier to watch Info.plist (already set in project.yml)
+          # Add WKWatchKitApp to watch Info.plist
           /usr/libexec/PlistBuddy -c "Add :WKWatchKitApp bool true" "$IOS_APP/Watch/FitMeWatch.app/Info.plist" 2>/dev/null || true
 
           # Package IPA
