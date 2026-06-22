@@ -30,6 +30,7 @@ targets:
         CFBundleShortVersionString: "0.1.0"
         CFBundleVersion: "1"
         LSRequiresIPhoneOS: true
+        WKWatchKitApp: true
         NSHealthShareUsageDescription: "FitMe+ reads your health data to display vitals."
         NSHealthUpdateUsageDescription: "FitMe+ writes manual readings to HealthKit."
     settings:

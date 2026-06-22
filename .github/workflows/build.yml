@@ -14,6 +14,7 @@ concurrency:
 env:
   PROJECT_NAME: FitMePlus
   DERIVED_DATA: build
+  IPA_NAME: FitMePlus
 
 jobs:
   build:
@@ -53,7 +54,18 @@ jobs:
             if [ $i -lt 3 ]; then sleep 10; fi
           done
 
-      - name: Build FitMeWatch
+      - name: Build FitMeApp (iOS)
+        run: |
+          xcodebuild build \
+            -project "$PROJECT_NAME.xcodeproj" \
+            -scheme "FitMeApp" \
+            -derivedDataPath "$DERIVED_DATA" \
+            -destination "generic/platform=iOS" \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Build FitMeWatch (watchOS)
         run: |
           xcodebuild build \
             -project "$PROJECT_NAME.xcodeproj" \
@@ -64,20 +76,35 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO
 
-      - name: Package IPA
+      - name: Embed watch app in iOS app and package IPA
         run: |
-          APP=$(find "$DERIVED_DATA" -name "FitMeWatch.app" -path "*/Debug*" -type d | head -1)
-          echo "App: $APP"
+          IOS_APP=$(find "$DERIVED_DATA" -name "FitMeApp.app" -path "*/Debug*" -type d | head -1)
+          WATCH_APP=$(find "$DERIVED_DATA" -name "FitMeWatch.app" -path "*/Debug*" -type d | head -1)
+          echo "iOS app: $IOS_APP"
+          echo "Watch app: $WATCH_APP"
+
+          # Embed watch app inside iOS app bundle
+          mkdir -p "$IOS_APP/Watch"
+          cp -R "$WATCH_APP" "$IOS_APP/Watch/"
+
+          # Add WKWatchKitApp to iOS Info.plist so AltStore recognizes it
+          /usr/libexec/PlistBuddy -c "Add :WKWatchKitApp bool true" "$IOS_APP/Info.plist" 2>/dev/null || \
+          /usr/libexec/PlistBuddy -c "Set :WKWatchKitApp true" "$IOS_APP/Info.plist"
+
+          # Add WKCompanionAppBundleIdentifier to watch Info.plist (already set in project.yml)
+          /usr/libexec/PlistBuddy -c "Add :WKWatchKitApp bool true" "$IOS_APP/Watch/FitMeWatch.app/Info.plist" 2>/dev/null || true
+
+          # Package IPA
           mkdir -p Payload
-          cp -R "$APP" Payload/
-          ditto -c -k --keepParent Payload FitMeWatch.ipa
+          cp -R "$IOS_APP" Payload/
+          ditto -c -k --keepParent Payload "${IPA_NAME}.ipa"
           rm -rf Payload
-          ls -lh FitMeWatch.ipa
+          ls -lh "${IPA_NAME}.ipa"
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: FitMeWatch-IPA
-          path: FitMeWatch.ipa
+          name: FitMePlus-IPA
+          path: FitMePlus.ipa
           compression-level: 0
           if-no-files-found: error

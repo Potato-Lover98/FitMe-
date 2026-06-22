@@ -4,3 +4,4 @@ FitML/
 *.xcodeproj/xcuserdata/
 DerivedData/
 build/
+*.ipa
