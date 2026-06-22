@@ -18,6 +18,9 @@ targets:
     sources:
       - path: FitMeApp/Sources
       - path: FitMeApp/Resources
+        type: folder
+        includes:
+          - "*.xcassets"
     dependencies:
       - package: FitMeCore
       - target: FitMeWatch
@@ -46,6 +49,9 @@ targets:
     sources:
       - path: FitMeWatch/Sources
       - path: FitMeWatch/Resources
+        type: folder
+        includes:
+          - "*.xcassets"
       - path: FitMeWatch/FitMeWatch.entitlements
     dependencies:
       - package: FitMeCore
