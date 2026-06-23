@@ -92,9 +92,9 @@ jobs:
           # Ensure no debug dylibs leak through
           find "$IOS_APP" -name "*.dylib" -delete 2>/dev/null || true
 
-          # Add WKWatchKitApp to iOS Info.plist
-          /usr/libexec/PlistBuddy -c "Add :WKWatchKitApp bool true" "$IOS_APP/Info.plist" 2>/dev/null || \
-          /usr/libexec/PlistBuddy -c "Set :WKWatchKitApp true" "$IOS_APP/Info.plist"
+          # NOTE: do NOT add WKWatchKitApp to the iOS Info.plist. That key marks
+          # the bundle as a WatchKit-only app, so iOS/AltStore stop seeing it as
+          # an iOS app and reject the IPA with "no app bundle".
 
           # Package IPA using standard zip (AltSign uses minizip)
           mkdir -p Payload
